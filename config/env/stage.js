@@ -6,7 +6,7 @@ module.exports = {
    ***************************************************************************/
 
   models: {
-    connection: 'localMongoDb'
+    connection: 'stageMongoDb'
   }
 
 };
