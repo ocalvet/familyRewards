@@ -60,9 +60,9 @@ module.exports.connections = {
     adapter: 'sails-mongo',
     host: 'localhost',
     port: 27017,
-    // user: 'rewardsApp',
-    // password: 'rewardsApp.local',
-    database: 'rewardsApp'
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_HOST
   },
 
   /***************************************************************************
