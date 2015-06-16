@@ -3,15 +3,20 @@
     'use strict';
 
     ng.module('dashboardApp')
-        .controller('MemberViewCtrl', ['$scope', '$mdToast', 'pagePropertiesService', '$stateParams', function($scope, $mdToast, pagePropertiesService, $stateParams) {
-            
-            pagePropertiesService.pageTitle = "Family - Member";
-            $scope.pageProperties = pagePropertiesService;
+        .controller('MemberViewCtrl', ['$scope', '$mdToast', 'pagePropertiesService', '$stateParams', 'familyService',
+            function($scope, $mdToast, pagePropertiesService, $stateParams, familyService) {
+                
+                pagePropertiesService.pageTitle = "Family - Member";
+                
+                $scope.pageProperties = pagePropertiesService;
 
-            $scope.member = $stateParams.member;
-
-            console.log("member", $stateParams.member);
-
+                familyService.getMember($stateParams.memberId)
+                    .then(function(member) {
+                        console.log("MemberViewCtrl ", member);
+                        $scope.member = member;
+                    }, function(error) {
+                        console.log(error);
+                    });
         }]);
 
 })(angular)

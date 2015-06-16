@@ -3,8 +3,8 @@
     'use strict';
 
     ng.module('dashboardApp')
-        .controller('FamilyViewCtrl', ['$scope', '$mdToast', 'pagePropertiesService', '$state', 'familyService', 
-            function($scope, $mdToast, pagePropertiesService, $state, familyService) {
+        .controller('FamilyViewCtrl', ['$scope', '$mdToast', 'pagePropertiesService', '$state', 'familyService', '$location',
+            function($scope, $mdToast, pagePropertiesService, $state, familyService, $location) {
             
                 familyService.getMembers()
                     .then(function(members){ $scope.familyMembers = members; });
@@ -13,7 +13,9 @@
                 $scope.pageProperties = pagePropertiesService;
 
                 $scope.memberClick = function(member) {
-                     $state.go('member', {member: member});
+                        $location.path('family/member/' + member.id);
+                        console.log("member ", member)
+                     // $state.go('member', {memberId: member.id});
                 };
 
                 $scope.deleteMember = function($event, member) {

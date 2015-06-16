@@ -34,7 +34,7 @@
                   templateUrl: "partials/family.html"
                 })
                 .state('member', {
-                  url: "/family/member",
+                  url: "/family/member/{memberId}",
                   controller: "MemberViewCtrl",
                   params: { member: null },
                   templateUrl: "partials/member.html"
