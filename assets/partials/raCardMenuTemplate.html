@@ -5,7 +5,7 @@
             <i class="material-icons">more_vert</i>
         </md-button>
     </div>
-    <md-content ng-show="showMenu">
+    <md-content ng-show="showMenu" class="md-whiteframe-z2" >
         <md-list>
             <md-list-item ng-repeat="menuItem in menuItems" ng-click="menuItem.action($event, familyMember)">
                 <p>{{ menuItem.title }}</p>
