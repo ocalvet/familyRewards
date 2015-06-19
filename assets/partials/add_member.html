@@ -1,1 +1,10 @@
-<h1>Add member page</h1>
+<md-content class="md-padding" layout="column">
+    <h1>Add member page</h1>
+    <form>
+        <label>Name</label>
+        <input name="name" ng-model="member.name" type="text"/>
+        <label>Day of birth</label>
+        <input name="dob" ng-model="member.dob" type="date"/>
+        <div ng-repeat="goal in availableGoals">{{ goal.goal }}</div>
+    </form>
+</md-content>
