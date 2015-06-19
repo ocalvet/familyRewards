@@ -28,10 +28,16 @@
               //
               // Now set up the states
             $stateProvider
+                // Members routes
                 .state('family', {
                   url: "/family",
                   controller: "FamilyViewCtrl",
                   templateUrl: "partials/family.html"
+                })
+                .state('addMember', {
+                  url: "/family/member/add",
+                  controller: "AddMemberViewCtrl",
+                  templateUrl: "partials/add_member.html"
                 })
                 .state('member', {
                   url: "/family/member/{memberId}",
@@ -39,11 +45,13 @@
                   params: { member: null },
                   templateUrl: "partials/member.html"
                 })
+                // Settings routes
                 .state('settings', {
                   url: "/settings",
                   controller: "SettingsViewCtrl",
                   templateUrl: "partials/settings.html"
                 })
+                // About routes
                 .state('about', {
                   url: "/about",
                   controller: "AboutViewCtrl",

@@ -12,9 +12,13 @@
                 pagePropertiesService.pageTitle = "Family";
                 $scope.pageProperties = pagePropertiesService;
 
+                $scope.addMember = function() {
+                    $location.path('family/member/add');
+                };
+
                 $scope.memberClick = function(member) {
-                        $location.path('family/member/' + member.id);
-                        console.log("member ", member)
+                    $location.path('family/member/' + member.id);
+                    console.log("member ", member)
                      // $state.go('member', {memberId: member.id});
                 };
 
