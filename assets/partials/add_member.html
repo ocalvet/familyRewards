@@ -1,10 +1,26 @@
 <md-content class="md-padding" layout="column">
     <h1>Add member page</h1>
     <form>
-        <label>Name</label>
-        <input name="name" ng-model="member.name" type="text"/>
-        <label>Day of birth</label>
-        <input name="dob" ng-model="member.dob" type="date"/>
+        <md-input-container md-no-float>
+          <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
+          <input ng-model="member.name" type="text" placeholder="Name">
+        </md-input-container>
+        <md-input-container md-no-float>
+          <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
+          <input ng-model="member.email" type="text" placeholder="email">
+        </md-input-container>
+        <md-input-container md-no-float>
+          <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
+          <input ng-model="member.dob" type="date" placeholder="Birthday">
+        </md-input-container>
+        <md-chips class="custom-chips" ng-model="availableGoals" md-on-append="newGoal($chip)">
+          <md-chip-template>
+            <span>
+              <strong>{{$chip.goal}}</strong>
+              <em>({{$chip.type}})</em>
+            </span>
+          </md-chip-template>
+        </md-chips>
         <div ng-repeat="goal in availableGoals">{{ goal.goal }}</div>
     </form>
 </md-content>

@@ -12,7 +12,11 @@
                     goals: []
                 };
 
+                $scope.availableGoals = [];
 
+                goalsService.getUserGoals().then(function(goals) {
+                    $scope.availableGoals = goals;
+                });
 
                 pagePropertiesService.pageTitle = "Family - Member - Add";
                 
