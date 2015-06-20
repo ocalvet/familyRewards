@@ -61,12 +61,37 @@
                 }
 
                 return defer.promise;
-            }
+            },
+
+            addMember = function(member) {
+                var defer = $q.defer();
+                try {
+                    familyArray.push(member);
+                    defer.resolve(member);
+                } catch (e) {
+                    defer.reject("Something went wrong");
+                }
+                return defer.promise;
+            },
+
+            deleteMember = function(member) {
+                var defer = $q.defer();
+                var memberIndex = familyArray.indexOf(member);
+                if (memberIndex > -1) {
+                    familyArray.splice(memberIndex, 1);
+                    defer.resolve(member);
+                } else {
+                    defer.reject("Error deleting: " + member.name);
+                }
+                return defer.promise;
+            };
 
             return {
                 getMembers: getFamilyMembers,
-                getMember: getFamilyMember
+                getMember: getFamilyMember,
+                deleteMember: deleteMember,
+                addMember: addMember
             }
-        }])
+        }]);
 
 })(angular)

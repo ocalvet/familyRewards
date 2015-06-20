@@ -23,15 +23,7 @@
                 };
 
                 $scope.deleteMember = function($event, member) {
-                    // var fm = $scope.familyMembers.filter(function(m) { return m.name === member.name })[0];
-                    // var memberIndex = $scope.familyMembers.indexOf(fm);
-                    var memberIndex = $scope.familyMembers.indexOf(member);
-                    if (memberIndex > -1) {
-                        $scope.familyMembers.splice(memberIndex, 1);
-                        console.log("Member deleted: " + member.name);
-                    } else {
-                        console.log("Error deleting: " + member.name);
-                    }
+                    familyService.deleteMember(member);
                     $event.stopPropagation();
                 }
 

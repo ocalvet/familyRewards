@@ -7,9 +7,13 @@
             function($scope, $mdToast, pagePropertiesService, $state, familyService, $location, goalsService) {
                 // Initialize a new member
                 $scope.member = {
-                    name: "",
-                    dob: "",
-                    goals: []
+                    picture: '/images/silhouette.png',
+                    name: '',
+                    email: '',
+                    dob: '',
+                    dayProgress: 0,
+                    weekProgress: 0,
+                    monthProgress: 0
                 };
 
                 $scope.availableGoals = [];
@@ -22,6 +26,13 @@
                 
                 $scope.pageProperties = pagePropertiesService;
 
+                $scope.addMember = function(member) {
+                    familyService.addMember(member)
+                    .then(function(member) {
+                        $state.go("family");
+                        console.log("Member added");
+                    });
+                }
             }]);
 
 })(angular)
