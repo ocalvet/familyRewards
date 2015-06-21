@@ -7,45 +7,18 @@
             var familyArray = [{
                     id: 1,
                     picture: '/images/silhouette.png',
-                    name: 'Jonathan',
-                    goals: [{goal: "Buy a PS4"}],
-                    tasks: [],
+                    name: 'Jonathan Calvet',
+                    goals: [{goal: "Buy a PS4"}, {goal: "Buy a tablet"}],
+                    tasks: [{task: "Take out the trash 3 X week"}, {task: "Make bed every day"}, {task: "Pick up the table before getting up"}],
                     dayProgress: 30,
                     weekProgress: 50,
                     monthProgress: 78
                 },{
                     id: 2,
                     picture: '/images/silhouette.png',
-                    name: 'Ovi',
-                    goals: [],
-                    tasks: [],
-                    dayProgress: 30,
-                    weekProgress: 50,
-                    monthProgress: 78
-                },{
-                    id: 3,
-                    picture: '/images/silhouette.png',
-                    name: 'Ernesto',
-                    goals: [],
-                    tasks: [],
-                    dayProgress: 30,
-                    weekProgress: 50,
-                    monthProgress: 78
-                },{
-                    id: 4,
-                    picture: '/images/silhouette.png',
-                    name: 'Ernestico',
-                    goals: [],
-                    tasks: [],
-                    dayProgress: 30,
-                    weekProgress: 50,
-                    monthProgress: 78
-                },{
-                    id: 5,
-                    picture: '/images/silhouette.png',
-                    name: 'Nora',
-                    goals: [],
-                    tasks: [],
+                    name: 'Ovi Calvet',
+                    goals: [{goal: "Buy a Nintendo DSI"}],
+                    tasks: [{task: "Take out the trash 3 X week"}, {task: "Make bed every day"}, {task: "Pick up the table before getting up"}, {task: "Feed patty"}],
                     dayProgress: 30,
                     weekProgress: 50,
                     monthProgress: 78
