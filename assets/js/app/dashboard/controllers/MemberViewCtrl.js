@@ -12,7 +12,6 @@
 
                 familyService.getMember($stateParams.memberId)
                     .then(function(member) {
-                        console.log("MemberViewCtrl ", member);
                         $scope.member = member;
                     }, function(error) {
                         console.log(error);

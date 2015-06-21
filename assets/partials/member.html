@@ -1,2 +1,16 @@
-<h1>Member View</h1>
-<h4>{{ member.name }}</h4>
+<md-content class="md-padding" layout="column">
+    <h1>{{ member.name }}</h1>
+    <div  class="member-icon-container" flex>
+        <img ng-src="{{ member.picture }}" alt="{{ member.name }}" style="width: 150px; height: 150px;"/>
+    </div> 
+    <div>{{ member.name }}</div>
+    <div>{{ member.email }}</div>
+    <div>{{ member.dob | date }}</div>
+    <md-chips class="custom-chips" ng-model="member.goals" readonly="true">
+        <md-chip-template>
+            <span>
+                <strong>{{ $chip.goal }}</strong>
+            </span>
+        </md-chip-template>
+    </md-chips>
+</md-content>

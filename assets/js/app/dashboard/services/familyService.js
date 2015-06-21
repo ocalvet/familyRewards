@@ -8,6 +8,8 @@
                     id: 1,
                     picture: '/images/silhouette.png',
                     name: 'Jonathan',
+                    goals: [{goal: "Buy a PS4"}],
+                    tasks: [],
                     dayProgress: 30,
                     weekProgress: 50,
                     monthProgress: 78
@@ -15,6 +17,8 @@
                     id: 2,
                     picture: '/images/silhouette.png',
                     name: 'Ovi',
+                    goals: [],
+                    tasks: [],
                     dayProgress: 30,
                     weekProgress: 50,
                     monthProgress: 78
@@ -22,6 +26,8 @@
                     id: 3,
                     picture: '/images/silhouette.png',
                     name: 'Ernesto',
+                    goals: [],
+                    tasks: [],
                     dayProgress: 30,
                     weekProgress: 50,
                     monthProgress: 78
@@ -29,6 +35,8 @@
                     id: 4,
                     picture: '/images/silhouette.png',
                     name: 'Ernestico',
+                    goals: [],
+                    tasks: [],
                     dayProgress: 30,
                     weekProgress: 50,
                     monthProgress: 78
@@ -36,6 +44,8 @@
                     id: 5,
                     picture: '/images/silhouette.png',
                     name: 'Nora',
+                    goals: [],
+                    tasks: [],
                     dayProgress: 30,
                     weekProgress: 50,
                     monthProgress: 78
