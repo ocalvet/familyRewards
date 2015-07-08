@@ -7,7 +7,7 @@
             
             pagePropertiesService.pageTitle = "About";
             $scope.pageProperties = pagePropertiesService;
-
-        }]);
+			
+		}]);
 
 })(angular)
