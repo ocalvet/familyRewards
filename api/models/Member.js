@@ -1,15 +1,22 @@
-var Member = {
-  // Enforce model schema in the case of schemaless databases
+/**
+* Member.js
+*
+* @description :: TODO: You might write a short summary of how this model works and what it represents here.
+* @docs        :: http://sailsjs.org/#!documentation/models
+*/
+
+module.exports = {
+  
   schema: true,
-	
-  identity: 'user',
+  autoUpdatedAt: true,
+  autoCreatedAt: true,
 
   attributes: {
-    // username  : { type: 'string', unique: true },
-	//email     : { type: 'email',  unique: true },
-	  name: { type: 'string' }
-    // tasks: { collection: 'task' }
+    id: { type: 'integer', primaryKey: true, unique: true },
+    name: { type: 'string' },
+    picture: { type: 'string' },
+    createdAt: { type: 'datetime', defaultsTo: function() { return new Date(); } },
+    updatedAt: { type: 'datetime', defaultsTo: function() { return new Date(); } }
   }
 };
 
-module.exports = Member;
