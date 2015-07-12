@@ -3,31 +3,22 @@
     'use strict';
 
     ng.module('dashboardApp')
-        .factory('familyService', ['$q', function($q){
-//            var familyArray = [{
-//                    id: 1,
-//                    picture: '/images/silhouette.png',
-//                    name: 'Jonathan Calvet',
-//                    goals: [{goal: "Buy a PS4"}, {goal: "Buy a tablet"}],
-//                    tasks: [{task: "Take out the trash 3 X week"}, {task: "Make bed every day"}, {task: "Pick up the table before getting up"}],
-//                    dayProgress: 30,
-//                    weekProgress: 50,
-//                    monthProgress: 78
-//                },{
-//                    id: 2,
-//                    picture: '/images/silhouette.png',
-//                    name: 'Ovi Calvet',
-//                    goals: [{goal: "Buy a Nintendo DSI"}],
-//                    tasks: [{task: "Take out the trash 3 X week"}, {task: "Make bed every day"}, {task: "Pick up the table before getting up"}, {task: "Feed patty"}],
-//                    dayProgress: 30,
-//                    weekProgress: 50,
-//                    monthProgress: 78
-//                }],
+        .factory('familyService', ['$q', '$http', 'configService', function($q, $http, configService){
 
-            getFamilyMembers = function(userId) {
+          var getFamilyMembers = function(userId) {
                 var defer = $q.defer();
-
-                defer.resolve(familyArray);
+                
+                $http({
+                  url: configService.urls.getFamily,
+                  method: 'GET',
+                  params: { userId: userId }
+                })
+                  .success(function(res) {
+                    defer.resolve(res);
+                  })
+                  .error(function(res) {
+                    defer.reject();
+                  });
 
                 return defer.promise;
             },

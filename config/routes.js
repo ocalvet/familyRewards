@@ -50,7 +50,7 @@ module.exports.routes = {
 
   'get /dashboard': 'DashboardController.index',
 
-
+  'get /family/getUserFamily': 'FamilyController.getFamily',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
