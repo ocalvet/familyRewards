@@ -1,0 +1,20 @@
+app:
+  buil: .
+  environment:
+    - NODE_ENV=development
+  command: sails lift
+  ports:
+    - 192.168.99.100:1337:1337
+  links:
+    - db
+  valumes:
+    - .:/app
+db:
+  image: percona:5.6
+  environment:
+    - MYSQL_ROOT_PASSWORD=admin.local
+    - MYSQL_DATABASE=dev_rewards
+    - MYSQL_USER=rewardsApp
+    - MYSQL_PASSWORD=admin.rewards
+  ports:
+    - 192.168.99.100:3306:3306

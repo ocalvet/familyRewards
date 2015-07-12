@@ -8,11 +8,7 @@
           var getFamilyMembers = function(userId) {
                 var defer = $q.defer();
                 
-                $http({
-                  url: configService.urls.getFamily,
-                  method: 'GET',
-                  params: { userId: userId }
-                })
+                $http.get(configService.urls.getFamily)
                   .success(function(res) {
                     defer.resolve(res);
                   })

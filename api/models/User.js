@@ -6,11 +6,9 @@ var User = {
     username  : { type: 'string', unique: true },
     email     : { type: 'email',  unique: true },
     passports : { collection: 'passport', via: 'user' },
-    
     name: { type: 'string' },
     role: { type:'string', enum: ['parent', 'child'] },
-    parent: { model: 'user' },
-    children: { collection: 'user' },
+    children: { collection: 'user', via: 'parent_of' },
     tasks: { collection: 'task' }
   }
 };

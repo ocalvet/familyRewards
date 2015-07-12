@@ -13,9 +13,11 @@ module.exports = {
    * `FamilyController.getFamily()`
    */
   getFamily: function (req, res) {
-    return res.json({
-      todo: 'getFamily() is not implemented yet!'
-    });
+    // get the user id of the person that is logged in
+    var users = User.fin
+      .then(function(users) {
+        return res.json(users);
+      });
   }
 };
 
