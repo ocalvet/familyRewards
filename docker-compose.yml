@@ -1,5 +1,5 @@
 app:
-  buil: .
+  build: .
   environment:
     - NODE_ENV=development
   command: sails lift
@@ -7,8 +7,8 @@ app:
     - 192.168.99.100:1337:1337
   links:
     - db
-  valumes:
-    - .:/app
+  volumes:
+    - .:/server
 db:
   image: percona:5.6
   environment:

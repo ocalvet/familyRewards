@@ -1,11 +1,22 @@
-# docker version 1.6.2
+FROM node:slim
 
-FROM ubuntu:14.04
+MAINTAINER Ovidio Calvet <calveto@gmail.com>
 
-# make sure apt is up to date
-RUN apt-get update
+RUN npm install npm -g
 
-# install nodejs and npm
-RUN apt-get install -y nodejs npm git git-core
+RUN npm config set registry http://registry.npmjs.org/
 
+RUN npm config set strict-ssl false
 
+RUN npm install -g sails
+RUN npm install -g grunt
+RUN npm install -g bower
+
+ADD . /server
+VOLUME ["/server"]
+
+WORKDIR /server
+
+RUN npm install
+
+EXPOSE 1337
