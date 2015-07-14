@@ -48,6 +48,13 @@ module.exports.connections = {
     database: 'rewardsApp'
   },
 
+  localDockerMysql: {
+    adapter: 'sails-mysql',
+    host: 'db',
+    user: 'rewardsApp',
+    password: 'admin.rewards',
+    database: 'dev_rewards'
+  },
   /***************************************************************************
   *                                                                          *
   * MongoDB is the leading NoSQL database.                                   *
