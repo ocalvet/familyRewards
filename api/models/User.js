@@ -7,8 +7,8 @@ var User = {
     email     : { type: 'email',  unique: true },
     passports : { collection: 'passport', via: 'user' },
     name: { type: 'string' },
-    role: { type:'string', enum: ['parent', 'child'] },
-    children: { collection: 'user', via: 'parent_of' },
+    // role: { type:'string', enum: ['parent', 'child'] },
+    // children: { collection: 'user', via: 'parent_of' },
     tasks: { collection: 'task' }
   }
 };

@@ -5,15 +5,15 @@
             <img ng-src="{{ member.picture }}" alt="{{ member.name }}" style="width: 150px; height: 150px;"/>
         </div> 
         <md-input-container md-no-float>
-          <i class="material-icons">ic_phone</i>
+          <md-icon md-font-library="material-icons">ic_phone</md-icon>
           <input ng-model="member.name" type="text" placeholder="Name">
         </md-input-container>
         <md-input-container md-no-float>
-          <i class="material-icons">ic_phone</i>
+          <md-icon md-font-library="material-icons">ic_phone</md-icon>
           <input ng-model="member.email" type="text" placeholder="email">
         </md-input-container>
         <md-input-container md-no-float>
-          <i class="material-icons">ic_phone</i>
+          <md-icon md-font-library="material-icons">ic_phone</md-icon>
           <input ng-model="member.dob" type="date" placeholder="Birthday">
         </md-input-container>
         <md-chips class="custom-chips" ng-model="availableGoals" md-on-append="newGoal($chip)">
