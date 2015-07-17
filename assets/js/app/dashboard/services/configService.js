@@ -6,7 +6,8 @@
     .service('configService', ['$location', function($location) {
 
       var urls = {
-        getFamily: "family/getFamily"
+        getFamily: "family/getFamily",
+        addFamilyMember: "family/addFamilyMember"
       }
 
       return {

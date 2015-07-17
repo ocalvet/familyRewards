@@ -7,7 +7,7 @@
 
           var getFamilyMembers = function(userId) {
                 var defer = $q.defer();
-                
+
                 $http.get(configService.urls.getFamily)
                   .success(function(res) {
                     defer.resolve(res);
@@ -36,10 +36,11 @@
             addMember = function(member) {
                 var defer = $q.defer();
                 try {
-                    familyArray.push(member);
-                    defer.resolve(member);
+                    $http.post(configService.urls.addFamilyMember, member)
+                      .success(function(members) { defer.resolve(members); })
+                      .error(function(response) { defer.reject(response.message); });
                 } catch (e) {
-                    defer.reject("Something went wrong");
+                    defer.reject("Something went wrong " + e.toString());
                 }
                 return defer.promise;
             },
