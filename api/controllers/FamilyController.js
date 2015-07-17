@@ -10,11 +10,11 @@ module.exports = {
 
 
   /**
-   * `FamilyController.getFamily()`
+   * `FamilyController.getFamily()
    */
   getFamily: function (req, res) {
     // get the user id of the person that is logged in
-    var users = User.fin
+    var users = User.find()
       .then(function(users) {
         return res.json(users);
       });

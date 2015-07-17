@@ -12,9 +12,9 @@ module.exports = {
     // },
     // 
     // findOne: function (req, res) {
-//         console.log("The find one called called");
-//         User.findOne({id: req.params.id}).populate("children").exec(function(err, user) {
-//             res.json(user);
-//         });
-//     }
+    //     console.log("The find one called called");
+    //     User.findOne({id: req.params.id}).populate("children").exec(function(err, user) {
+    //         res.json(user);
+    //     });
+    // }
 }
