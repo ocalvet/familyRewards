@@ -23,7 +23,7 @@
                 });
 
                 pagePropertiesService.pageTitle = "Family - Member - Add";
-                
+
                 $scope.pageProperties = pagePropertiesService;
 
                 $scope.addMember = function(member) {
