@@ -14,7 +14,10 @@
       };
 
       register.completeRegistration = function(userInfo) {
-        console.log("user info", userInfo);
+        registrationService.registerUser(userInfo)
+          .then(function(user) {
+            console.log("user after registration", user);
+          })
       }
 
     }]);
