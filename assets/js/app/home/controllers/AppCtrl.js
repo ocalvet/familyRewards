@@ -3,8 +3,14 @@
     'use strict';
 
     ng.module('homeApp')
-        .controller('AppCtrl', ['$scope', function($scope) {
-            $scope.test = "Angular working";
+        .controller('AppCtrl', ['$state', function($state) {
+
+          var app = this;
+
+          app.goTo = function(state) {
+            $state.go(state);
+          };
+
         }]);
 
 })(angular)

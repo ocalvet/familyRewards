@@ -32,30 +32,30 @@
                 .state('family', {
                   url: "/family",
                   controller: "FamilyViewCtrl",
-                  templateUrl: "partials/family.html"
+                  templateUrl: "partials/dashboard/family.html"
                 })
                 .state('addMember', {
                   url: "/family/member/add",
                   controller: "AddMemberViewCtrl",
-                  templateUrl: "partials/add_member.html"
+                  templateUrl: "partials/dashboard/add_member.html"
                 })
                 .state('member', {
                   url: "/family/member/{memberId}",
                   controller: "MemberViewCtrl",
                   params: { member: null },
-                  templateUrl: "partials/member.html"
+                  templateUrl: "partials/dashboard/member.html"
                 })
                 // Settings routes
                 .state('settings', {
                   url: "/settings",
                   controller: "SettingsViewCtrl",
-                  templateUrl: "partials/settings.html"
+                  templateUrl: "partials/dashboard/settings.html"
                 })
                 // About routes
                 .state('about', {
                   url: "/about",
                   controller: "AboutViewCtrl",
-                  templateUrl: "partials/about.html"
+                  templateUrl: "partials/dashboard/about.html"
                 });
         });
 

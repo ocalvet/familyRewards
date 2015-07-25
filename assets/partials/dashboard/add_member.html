@@ -1,0 +1,26 @@
+<md-content layout="column">
+    <h1>Add member page</h1>
+    <form no-validate>
+        <div  class="member-icon-container" flex>
+            <img ng-src="{{ member.picture }}" alt="{{ member.name }}" style="width: 150px; height: 150px;"/>
+        </div> 
+        <md-content layout-padding class="autoScroll">
+          <md-input-container>
+            <!-- <md-icon md-font-library="material-icons" class="name">ic_person_24</md-icon> -->
+            <label>Name</label>
+            <input ng-model="member.name" type="text">
+          </md-input-container>
+          <md-input-container>
+            <!-- <md-icon md-font-library="material-icons" class="name">ic_person_24</md-icon> -->
+            <label>Email</label>
+            <input ng-model="member.email" type="email">
+          </md-input-container>
+          <md-input-container>
+            <!-- <md-icon md-font-library="material-icons" class="name">ic_person_24</md-icon> -->
+            <label>Date of Birth</label>
+            <input ng-model="member.dob" type="date">
+          </md-input-container>
+          <md-button ng-click="addMember(member)">Add member</md-button>
+        </md-content>
+    </form>
+</md-content>

@@ -2,7 +2,28 @@
 
     'use strict';
 
-    ng.module('homeApp', ['ngMaterial'])
+    ng.module('homeApp', ['ngMaterial', 'ui.router'])
+        .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+
+          $urlRouterProvider.otherwise("/home");
+
+          $stateProvider
+            .state("home", {
+              url: "/home",
+              controller: "HomeCtrl as home",
+              templateUrl: "partials/home/home.html"
+            })
+            .state("signin", {
+              url: "/signin",
+              controller: "SigninCtrl as signin",
+              templateUrl: "partials/home/signin.html"
+            })
+            .state("register", {
+              url: "/register",
+              controller: "RegisterCtrl as register",
+              templateUrl: "partials/home/register.html"
+            });
+        }])
         .config(function($mdThemingProvider) {
           $mdThemingProvider.theme('default')
             .primaryPalette('blue', {

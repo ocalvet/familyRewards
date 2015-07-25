@@ -1,0 +1,18 @@
+<div layout="column">
+  <form novalidate>
+    <md-content layout-padding layout="column">
+        <md-input-container>
+          <label>Username or Email</label>
+          <input ng-model="signin.user.username">
+        </md-input-container>
+        <md-input-container>
+          <label>Password</label>
+          <input ng-model="signin.user.password" type="password">
+        </md-input-container>
+        <div layout="row">
+          <md-button data-ng-click="signin.signinUser(signin.user)" >Signin</md-button>
+          <md-button data-ng-click="signin.goTo('register')">Register</md-button>
+        </div>
+    </md-content>
+  </form>
+</div>

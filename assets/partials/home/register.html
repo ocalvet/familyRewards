@@ -1,0 +1,24 @@
+<div layout="column">
+  <form novalidate>
+    <md-content layout-padding layout="column">
+      <md-input-container>
+        <label>Name</label>
+        <input ng-model="register.userInfo.name">
+      </md-input-container>
+      <md-select placeholder="User Role" ng-model="register.userInfo.role">
+        <md-option ng-repeat="role in register.availableRoles" value="{{ role }}">{{ role }}</md-option>
+      </md-select>
+      <md-input-container>
+        <label>Username or Email</label>
+        <input ng-model="register.userInfo.username">
+      </md-input-container>
+      <md-input-container>
+        <label>Password</label>
+        <input ng-model="register.userInfo.password" type="password">
+      </md-input-container>
+      <div layout="row">
+        <md-button data-ng-click="register.completeRegistration(register.userInfo)" >register</md-button>
+      </div>
+    </md-content>
+  </form>
+</div>
