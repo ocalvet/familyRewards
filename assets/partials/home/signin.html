@@ -1,5 +1,5 @@
 <div layout="column">
-  <form ng-submit="signin.signinUser(signin.user)" novalidate>
+  <form novalidate>
     <md-content layout-padding layout="column">
         <md-input-container>
           <label>Username or Email</label>
@@ -10,7 +10,8 @@
           <input ng-model="signin.user.password" type="password">
         </md-input-container>
         <div layout="row">
-          <md-button>Signin</md-button>
+          <md-button data-ng-click="signin.signinUser(signin.user)" >Signin</md-button>
+          <md-button data-ng-click="signin.goTo('register')">Register</md-button>
         </div>
     </md-content>
   </form>

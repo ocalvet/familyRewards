@@ -3,9 +3,20 @@
   'use strict';
 
   ng.module('homeApp')
-    .controller('RegisterCtrl', ['$state', function($state) {
+    .controller('RegisterCtrl', ['$state', 'registrationService', function($state, registrationService) {
+
       var register = this;
-      register.title = "Register title";
+
+      register.availableRoles = ["parent", "child"];
+
+      register.userInfo = {
+        role: 'parent'
+      };
+
+      register.completeRegistration = function(userInfo) {
+        console.log("user info", userInfo);
+      }
+
     }]);
 
 })(angular)
