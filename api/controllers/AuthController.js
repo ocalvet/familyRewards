@@ -145,13 +145,16 @@ var AuthController = {
 
       switch (action) {
         case 'register':
-          res.redirect('/register');
+          res.json({ success: false, error: "There was an error registering the user"});
+          //res.redirect('/register');
           break;
         case 'disconnect':
-          res.redirect('back');
+          res.json({ success: false, error: "There was an error disconnecting the user"});
+//          res.redirect('back');
           break;
         default:
-          res.redirect('/login');
+          res.json({ success: false, error: "There was an error the"});
+//          res.redirect('/login');
       }
     }
 
@@ -170,7 +173,9 @@ var AuthController = {
 
         // Upon successful login, send the user to the homepage were req.user
         // will be available.
-        res.redirect('/dashboard');
+
+        res.json({ success: true, user: req.user });
+        //res.redirect('/dashboard');
       });
     });
   },

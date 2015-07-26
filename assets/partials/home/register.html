@@ -9,7 +9,11 @@
         <md-option ng-repeat="role in register.availableRoles" value="{{ role }}">{{ role }}</md-option>
       </md-select>
       <md-input-container>
-        <label>Username or Email</label>
+        <label>Email</label>
+        <input ng-model="register.userInfo.email" type="email">
+      </md-input-container>
+      <md-input-container>
+        <label>Username</label>
         <input ng-model="register.userInfo.username">
       </md-input-container>
       <md-input-container>
