@@ -9,8 +9,8 @@
         var defer = $q.defer();
 
         $http.get('/auth/providers')
-          .success(function(providers) {
-            defer.resolve(providers);
+          .success(function(response) {
+            defer.resolve(response.providers);
           })
           .error(function(response) {
             defer.reject(response);

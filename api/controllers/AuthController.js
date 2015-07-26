@@ -55,7 +55,7 @@ var AuthController = {
 
   providers: function(req, res) {
     var strategies = sails.config.passport
-      , providers  = {};
+      , providers  = [];
 
     // Get a list of available providers for use in your templates.
     Object.keys(strategies).forEach(function (key) {
@@ -63,10 +63,10 @@ var AuthController = {
         return;
       }
 
-      providers[key] = {
-        name: strategies[key].name
-        , slug: key
-      };
+      providers.push({
+        name: strategies[key].name,
+        slug: key
+      });
     });
 
     res.json({

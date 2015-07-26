@@ -13,6 +13,12 @@
           <md-button data-ng-click="signin.signinUser(signin.user)" >Signin</md-button>
           <md-button data-ng-click="signin.goTo('register')">Register</md-button>
         </div>
+        <div data-ng-show="signin.showOtherProviders">
+          <h3>Sign In with other services</h3>
+          <div layout="row">
+            <md-button data-ng-repeat="provider in signin.providers" data-ng-click="signin.useProvider(provider)">{{ provider.name }}</md-button>
+          </div>
+        </div>
     </md-content>
   </form>
 </div>
