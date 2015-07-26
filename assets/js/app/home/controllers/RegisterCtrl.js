@@ -3,7 +3,7 @@
   'use strict';
 
   ng.module('homeApp')
-    .controller('RegisterCtrl', ['$state', 'registrationService', function($state, registrationService) {
+    .controller('RegisterCtrl', ['$state', 'registrationService', '$window', function($state, registrationService, $window) {
 
       var register = this;
 
@@ -16,7 +16,7 @@
       register.completeRegistration = function(userInfo) {
         registrationService.registerUser(userInfo)
           .then(function(user) {
-            console.log("user after registration", user);
+            $window.location = "/dashboard";
           })
       }
 

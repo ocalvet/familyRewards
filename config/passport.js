@@ -43,26 +43,26 @@ module.exports.passport = {
   //   }
   // },
 
-  // facebook: {
-  //   name: 'Facebook',
-  //   protocol: 'oauth2',
-  //   strategy: require('passport-facebook').Strategy,
-  //   options: {
-  //     clientID: 'your-client-id',
-  //     clientSecret: 'your-client-secret',
-  //     scope: ['email'] /* email is necessary for login behavior */
-  //   }
-  // },
+  facebook: {
+    name: 'Facebook',
+    protocol: 'oauth2',
+    strategy: require('passport-facebook').Strategy,
+    options: {
+      clientID: '1463017387327553',
+      clientSecret: 'ad53258be99469bcfc49e1418da702d4',
+      scope: ['email'] /* email is necessary for login behavior */
+    }
+  },
 
-  // google: {
-  //   name: 'Google',
-  //   protocol: 'oauth2',
-  //   strategy: require('passport-google-oauth').OAuth2Strategy,
-  //   options: {
-  //     clientID: 'your-client-id',
-  //     clientSecret: 'your-client-secret'
-  //   }
-  // },
+   google: {
+     name: 'Google',
+     protocol: 'oauth2',
+     strategy: require('passport-google-oauth').OAuth2Strategy,
+     options: {
+       clientID: 'your-client-id',
+       clientSecret: 'your-client-secret'
+     }
+   }
 
   // cas: {
   //   name: 'CAS',

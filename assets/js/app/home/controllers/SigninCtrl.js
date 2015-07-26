@@ -3,13 +3,18 @@
   'use strict';
 
   ng.module('homeApp')
-    .controller('SigninCtrl', ['$state', function($state) {
+    .controller('SigninCtrl', ['$state', 'providerService', function($state, providerService) {
 
       var signin = this;
 
-      console.log("scope");
+      signin.providers = [];
 
-      signin.title = "Signin page";
+      providerService.getProviders()
+        .then(function(providers) {
+          signin.providers = providers;
+        }, function(error) {
+          console.log(error);
+        })
 
       signin.signinUser = function(user) {
         console.log("user information", user);

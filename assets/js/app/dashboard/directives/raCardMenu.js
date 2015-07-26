@@ -19,7 +19,7 @@
                     familyMember: "=",
                     menuItems: "="
                 },
-                templateUrl: 'partials/raCardMenuTemplate.html'
+                templateUrl: 'partials/dashboard/raCardMenuTemplate.html'
             };
         });
 })(angular)

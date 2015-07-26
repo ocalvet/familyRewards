@@ -26,7 +26,7 @@ var crypto    = require('crypto');
 exports.register = function (req, res, next) {
   var
     email    = req.param('email'),
-    //username = req.param('username'),
+    username = req.param('username'),
     role = req.param('role'),
     name = req.param('name'),
     password = req.param('password');
@@ -36,10 +36,10 @@ exports.register = function (req, res, next) {
     return next(new Error('No email was entered.'));
   }
 
-  //if (!username) {
-  //  req.flash('error', 'Error.Passport.Username.Missing');
-  //  return next(new Error('No username was entered.'));
-  //}
+  if (!username) {
+    req.flash('error', 'Error.Passport.Username.Missing');
+    return next(new Error('No username was entered.'));
+  }
 
   if (!password) {
     req.flash('error', 'Error.Passport.Password.Missing');
@@ -47,7 +47,7 @@ exports.register = function (req, res, next) {
   }
 
   User.create({
-    // username : username,
+    username : username,
     email    : email,
     name : name,
     role: role
