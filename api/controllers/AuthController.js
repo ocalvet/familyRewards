@@ -53,6 +53,28 @@ var AuthController = {
     });
   },
 
+  providers: function(req, res) {
+    var strategies = sails.config.passport
+      , providers  = {};
+
+    // Get a list of available providers for use in your templates.
+    Object.keys(strategies).forEach(function (key) {
+      if (key === 'local') {
+        return;
+      }
+
+      providers[key] = {
+        name: strategies[key].name
+        , slug: key
+      };
+    });
+
+    res.json({
+      providers : providers
+      , errors    : req.flash('error')
+    });
+  },
+
   /**
    * Log out a user and return them to the homepage
    *
@@ -145,13 +167,16 @@ var AuthController = {
 
       switch (action) {
         case 'register':
-          res.redirect('/register');
+          res.json({ success: false, error: "There was an error registering the user"});
+          //res.redirect('/register');
           break;
         case 'disconnect':
-          res.redirect('back');
+          res.json({ success: false, error: "There was an error disconnecting the user"});
+//          res.redirect('back');
           break;
         default:
-          res.redirect('/login');
+          res.json({ success: false, error: "There was an error the"});
+//          res.redirect('/login');
       }
     }
 
@@ -170,7 +195,9 @@ var AuthController = {
 
         // Upon successful login, send the user to the homepage were req.user
         // will be available.
-        res.redirect('/dashboard');
+
+        res.json({ success: true, user: req.user });
+        //res.redirect('/dashboard');
       });
     });
   },
