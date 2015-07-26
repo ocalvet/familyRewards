@@ -24,20 +24,9 @@
         console.log("user information", user);
       };
 
-      signin.useProvider = function(provider) {
+      signin.useProvider = function(ev, provider) {
         console.log("Using provider", provider);
-        $window.open("auth/" + provider.name);
-        //$mdDialog.show({
-        //  //controller: DialogController,
-        //  //templateUrl: 'dialog1.tmpl.html',
-        //  //parent: angular.element(document.body),
-        //  //targetEvent: ev,
-        //})
-        //  .then(function(answer) {
-        //    $scope.alert = 'You said the information was "' + answer + '".';
-        //  }, function() {
-        //    $scope.alert = 'You cancelled the dialog.';
-        //  });
+        $window.open("auth/" + provider.slug, "__blank");
       };
 
       signin.goTo = function(state) {

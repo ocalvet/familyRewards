@@ -33,25 +33,6 @@ module.exports.routes = {
   ***************************************************************************/
 
 
-// Passport routes
-  'get /login': 'AuthController.login',
-  'get /logout': 'AuthController.logout',
-  'get /register': 'AuthController.register',
-  'get /auth/providers': 'AuthController.providers',
-
-  'post /auth/local': 'AuthController.callback',
-  'post /auth/local/:action': 'AuthController.callback',
-
-  'get /auth/:provider': 'AuthController.provider',
-  'get /auth/:provider/callback': 'AuthController.callback',
-
-  '/': {
-    view: 'home/index'
-  },
-
-  'get /dashboard': 'DashboardController.index',
-
-  'get /family/getUserFamily': 'FamilyController.getFamily',
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
@@ -62,4 +43,32 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+
+// Passport routes
+  'get /login': 'AuthController.login',
+  'get /logout': 'AuthController.logout',
+  'get /register': 'AuthController.register',
+  'get /auth/providers': 'AuthController.providers',
+
+  'post /auth/local': 'AuthController.callback',
+  'post /auth/local/:action': 'AuthController.callback',
+
+  'get /auth/:provider': {
+    controller: 'AuthController',
+    action: 'provider',
+    cors: true
+  },
+  'get /auth/:provider/callback': {
+    controller: 'AuthController',
+    action: 'callback',
+    cors: true
+  },
+
+  '/': {
+    view: 'home/index'
+  },
+
+  'get /dashboard': 'DashboardController.index',
+
+  'get /family/getUserFamily': 'FamilyController.getFamily',
 };

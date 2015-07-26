@@ -1,0 +1,16 @@
+<md-dialog aria-label="Provider Signup">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Provider Signup</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="providerDialog.hide()">
+          <md-icon md-font-library="material-icons" class="name" aria-label="Close dialog">ic_close_24</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <iframe ng-src="{{ providerDialog.providerUrl }}"></iframe>
+    </md-dialog-content>
+  </form>
+</md-dialog>

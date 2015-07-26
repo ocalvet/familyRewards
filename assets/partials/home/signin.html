@@ -16,7 +16,7 @@
         <div data-ng-show="signin.showOtherProviders">
           <h3>Sign In with other services</h3>
           <div layout="row">
-            <md-button data-ng-repeat="provider in signin.providers" data-ng-click="signin.useProvider(provider)">{{ provider.name }}</md-button>
+            <md-button data-ng-repeat="provider in signin.providers" data-ng-click="signin.useProvider($event, provider)">{{ provider.name }}</md-button>
           </div>
         </div>
     </md-content>
