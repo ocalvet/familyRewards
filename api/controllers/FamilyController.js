@@ -14,7 +14,7 @@ module.exports = {
    */
   getFamily: function (req, res) {
     // get the user id of the person that is logged in
-    var users = User.find({ parent: req.user.id })
+    User.find({ parent: req.user.id })
       .then(function(users) {
         return res.json(users);
       });

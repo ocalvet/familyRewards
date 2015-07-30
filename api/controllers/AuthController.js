@@ -114,9 +114,10 @@ var AuthController = {
    * @param {Object} res
    */
   register: function (req, res) {
-    res.view({
-      errors: req.flash('error')
-    });
+    res.json(req.flash('error'));
+    //res.view({
+    //  errors: req.flash('error')
+    //});
   },
 
   /**
