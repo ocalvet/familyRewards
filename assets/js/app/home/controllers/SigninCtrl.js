@@ -3,8 +3,8 @@
   'use strict';
 
   ng.module('homeApp')
-    .controller('SigninCtrl', ['$state', 'providerService', '$mdDialog', '$window', 'securityService',
-      function($state, providerService, $mdDialog, $window, securityService) {
+    .controller('SigninCtrl', ['$state', 'providerService', '$mdDialog', '$window', 'securityService', 'notificationService',
+      function($state, providerService, $mdDialog, $window, securityService, notificationService) {
 
         var signin = this;
 
@@ -14,11 +14,10 @@
 
         providerService.getProviders()
           .then(function(providers) {
-            console.log("Providers", providers);
             signin.providers = providers;
             signin.showOtherProviders = signin.providers.length > 0;
           }, function(error) {
-            console.log(error);
+            notificationService.showError(error);
           })
 
         signin.signinUser = function(user) {
@@ -27,7 +26,7 @@
             .then(function() {
               $window.location = "dashboard";
             }, function(error) {
-              console.log("There was an error sigin user in");
+              notificationService.showError(error);
             });
         };
 
