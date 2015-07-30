@@ -9,7 +9,11 @@
 
         $http.post("/auth/local/register", user)
           .success(function(response) {
-            defer.resolve(response);
+            if(response.success) {
+              defer.resolve(response.user);
+            } else {
+              defer.reject("Registration could not be completed")
+            }
           })
           .error(function(response) {
             defer.reject("User couldn't register");
