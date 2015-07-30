@@ -1,5 +1,3 @@
-# rewardsSailsApp
+# Rewards Application 
 
-a [Sails](http://sailsjs.org) application
-
-testing deployment
+a [Calvet Technology Solutions](http://sailsjs.org) application that help parents educate their children using a rewards system.
