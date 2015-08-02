@@ -14,7 +14,7 @@
  *
  * @param {Object}   req
  * @param {string}   accessToken
- * @param {string}    refreshToken
+ * @param {string}   refreshToken
  * @param {Object}   profile
  * @param {Function} next
  */
