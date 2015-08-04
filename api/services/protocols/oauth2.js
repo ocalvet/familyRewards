@@ -15,7 +15,7 @@
  * @param {Object}   req
  * @param {string}   accessToken
  * @param {string}   refreshToken
- * @param {Object}   profile
+ * @param {Object}   profile®
  * @param {Function} next
  */
 module.exports = function (req, accessToken, refreshToken, profile, next) {
