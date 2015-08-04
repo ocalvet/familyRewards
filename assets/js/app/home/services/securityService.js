@@ -10,11 +10,7 @@
 
         $http.post("auth/local", user)
           .success(function(response) {
-            if (response.success) {
-              defer.resolve();
-            } else {
-              defer.reject("There was an error authenticating, please contact administrator");
-            }
+            defer.resolve();
           })
           .error(function(response) {
             defer.reject("There was an error authenticating, please contact administrator");
