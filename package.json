@@ -35,7 +35,7 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "test": "mocha test/bootstrap.test.js test/unit/**/*.test.js"
+    "test": "mocha test/bootstrap.test.js test/unit/**/*.test.js test/unit/**/**/*.test.js --watch"
   },
   "main": "app.js",
   "repository": {
@@ -45,12 +45,13 @@
   "author": "anonymous node/sails user",
   "license": "",
   "devDependencies": {
-    "grunt-cli": "^0.1.13",
     "chai": "^3.0.0",
+    "grunt-cli": "^0.1.13",
     "grunt-mocha-istanbul": "^2.4.0",
     "grunt-mocha-test": "^0.12.7",
     "istanbul": "^0.3.15",
     "mocha": "^2.2.5",
+    "should": "^8.2.2",
     "sinon": "^1.15.3",
     "supertest": "^1.0.1"
   }
