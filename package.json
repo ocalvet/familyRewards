@@ -2,7 +2,7 @@
   "name": "rewardsSailsApp",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
+  "description": "A children rewards application to allow parents keep track of their children's goals",
   "keywords": ['family', 'kids', 'children', 'rewards'],
   "dependencies": {
     "bcryptjs": "^2.1.0",
