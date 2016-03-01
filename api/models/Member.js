@@ -6,7 +6,7 @@
 */
 
 module.exports = {
-  
+
   schema: true,
   autoUpdatedAt: true,
   autoCreatedAt: true,

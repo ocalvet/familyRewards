@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "description": "A children rewards application to allow parents keep track of their children's goals",
-  "keywords": ['family', 'kids', 'children', 'rewards'],
+  "keywords": [],
   "dependencies": {
     "bcryptjs": "^2.1.0",
     "ejs": "~0.8.4",
@@ -25,7 +25,7 @@
     "passport-google-oauth": "^0.2.0",
     "passport-local": "^1.0.0",
     "rc": "~0.5.0",
-    "sails": "~0.11.0",
+    "sails": "~0.12.0",
     "sails-disk": "~0.10.0",
     "sails-generate-auth": "^0.3.1",
     "sails-mongo": "^0.11.2",
